@@ -16,12 +16,21 @@
   <div class="main-container mt-6">
     <div class="w-full max-w-xl">
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <? questionsList.forEach(question=>{ ?>
-        <?!=  include(question.component, question)  ?>
-        <? }) ?>
-      <button class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="addQuestionsGroup(e)">
-        Add another professional
-      </button>
+        <div id="group1-container">
+          <? var htmlString ?>
+          <!-- <div class="group-1 border-solid border-t-2 border-sky-500">
+<? htmlString = questionsList.map(question=>{ ?>
+<? const html =  include(question.component, question)?>
+<?!=  html  ?>
+<? return html.toString() ?>
+<? }).join("")?>
+</div> -->
+          <?!= include("Comp-Question-Group", 
+            {questionsList, groupLabel: "group-1"}) ?>
+          <? console.log(htmlString) ?>
+          <?!=  include("Comp-Add-Button", 
+            {buttonLabel: "Add another Professional", htmlString, groupLabel: "group-1"})  ?>
+        </div>
         <button class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="handleSubmit()">
         Submit
       </button>

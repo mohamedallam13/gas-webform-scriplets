@@ -1,14 +1,16 @@
 const { Toolkit } = CCLIBRARIES;
 
+var questionsList
+
 function doGet(e) {
-  const questionsList = getQuestionsList();
+  getQuestionsList();
   const indexTemplate = HtmlService.createTemplateFromFile('index');
   Object.assign(indexTemplate, { questionsList });
   return indexTemplate.evaluate();
 }
 
 function getQuestionsList() {
-  const questionsFileId = "1G8IQr9hddTlMhri-lcVjQzSrBCsqBlRz";
-  const questions = Toolkit.readFromJSON(questionsFileId);
-  return questions;
+  questionsFileId = ENV.questionsFileId;
+  questionsList = questionsList || Toolkit.readFromJSON(questionsFileId);
+  return JSON.stringify(questionsList);
 }
