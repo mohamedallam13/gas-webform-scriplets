@@ -1,0 +1,34 @@
+<div class="mb-4" id=<?="div-" + inputId ?>>
+
+  <label class="block text-gray-700 text-sm font-bold mb-2" id=<?= inputId ?>>
+  <span class="text-gray-700"> <?= inputLabel ?></span>
+  <div class="mb-3 xl:w-96">
+  <select class="form-select form-select-sm
+    appearance-none
+    block
+    w-full
+    px-2
+    py-1
+    text-sm
+    font-normal
+    text-gray-700
+    bg-white bg-clip-padding bg-no-repeat
+    border border-solid border-gray-300
+    rounded
+    transition
+    ease-in-out
+    m-0
+    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label=".form-select-sm example"
+      name=<?=  inputType ?>
+    >
+    <? choices.forEach(choice=>{?>
+    <option><?= choice ?></option>
+    <? })?>
+  </select>
+  </div>
+  </label>
+
+  <p class="text-red-500 text-xs italic ">
+    <?= validationMessage ?>
+  </p>
+</div>

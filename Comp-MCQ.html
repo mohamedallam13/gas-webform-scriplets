@@ -1,0 +1,19 @@
+<div class="mb-4" id=<?="div-" + inputId ?>>
+  <div class="w-full py-2 text-gray-700 mb-3"
+    id=<?=inputId ?>>
+    <label class="block text-gray-700 text-sm font-bold mb-2" for=<?= inputId ?>>
+        <?= inputLabel ?>
+      </label>
+      <div class="flex flex-col">
+        <? choices.forEach(choice=>{?>
+        <label class="text-gray-700">
+        <input type=<?= inputType ?> name=<?= inputId ?> value=<?= choice ?>>
+        <span class="ml-1"><?= choice ?></span>
+        </label>
+        <? })?>
+      </div>
+  </div>
+  <p class="text-red-500 text-xs italic ">
+    <?= validationMessage ?>
+  </p>
+</div>

@@ -1,0 +1,34 @@
+<script>
+  // var questions
+
+  // window.onload = load;
+
+  // function load(){
+  // google.script.run
+  // .withSuccessHandler(setQuestions)
+  // .getQuestionsList()
+  // }
+
+  const setQuestions = (questionsLoad)=>{
+    questions = JSON.parse(questionsLoad);
+    console.log(questionsLoad)
+  }
+  const handleSubmit = ()=>{
+  collectAllFields();
+  // validateAllFields();
+  // applyNonValidation();
+  }
+
+const addQuestionsGroup = (e)=>{
+  console.log(e)
+// google.script.run.withSucessHandler((html)=>{
+//   $(e.target.id).append(html)
+//   }).include(indexGen,{id: e.target.id})
+
+}
+
+const collectAllFields = ()=>{
+    const data = $('form').serializeArray();
+    console.log(data);
+}
+</script>
